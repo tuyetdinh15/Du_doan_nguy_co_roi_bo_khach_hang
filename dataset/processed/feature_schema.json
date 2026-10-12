@@ -1,0 +1,100 @@
+{
+    "target_column": "Churn",
+    "target_mapping": {
+        "No": 0,
+        "Yes": 1
+    },
+    "id_column_excluded": "CustomerID",
+    "raw_input_columns": [
+        "Age",
+        "Gender",
+        "Tenure",
+        "MonthlyCharges",
+        "Contract",
+        "PaymentMethod",
+        "TotalCharges"
+    ],
+    "raw_input_types": {
+        "Age": "int64",
+        "Gender": "str",
+        "Tenure": "int64",
+        "MonthlyCharges": "float64",
+        "Contract": "str",
+        "PaymentMethod": "str",
+        "TotalCharges": "float64"
+    },
+    "valid_values": {
+        "Gender": [
+            "Female",
+            "Male",
+            "Other"
+        ],
+        "Contract": [
+            "Month-to-month",
+            "One year",
+            "Two year"
+        ],
+        "PaymentMethod": [
+            "Bank transfer",
+            "Credit card",
+            "Electronic check",
+            "Mailed check"
+        ]
+    },
+    "numeric_columns": [
+        "Age",
+        "Tenure",
+        "MonthlyCharges",
+        "TotalCharges"
+    ],
+    "categorical_columns": [
+        "Gender",
+        "Contract",
+        "PaymentMethod"
+    ],
+    "processed_feature_names": [
+        "Age",
+        "Tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "Gender_Female",
+        "Gender_Male",
+        "Gender_Other",
+        "Contract_Month-to-month",
+        "Contract_One year",
+        "Contract_Two year",
+        "PaymentMethod_Bank transfer",
+        "PaymentMethod_Credit card",
+        "PaymentMethod_Electronic check",
+        "PaymentMethod_Mailed check"
+    ],
+    "processed_feature_order": [
+        "Age",
+        "Tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "Gender_Female",
+        "Gender_Male",
+        "Gender_Other",
+        "Contract_Month-to-month",
+        "Contract_One year",
+        "Contract_Two year",
+        "PaymentMethod_Bank transfer",
+        "PaymentMethod_Credit card",
+        "PaymentMethod_Electronic check",
+        "PaymentMethod_Mailed check"
+    ],
+    "fit_dataset": "train",
+    "random_state": 42,
+    "preprocessing": {
+        "numeric_imputation": "median",
+        "numeric_scaling": "StandardScaler",
+        "categorical_imputation": "most_frequent",
+        "categorical_encoding": "OneHotEncoder",
+        "unknown_categories": "ignore",
+        "target_encoding": {
+            "No": 0,
+            "Yes": 1
+        }
+    }
+}
