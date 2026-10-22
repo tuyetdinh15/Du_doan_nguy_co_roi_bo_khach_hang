@@ -1,0 +1,36 @@
+{
+    "algorithm": "Logistic Regression",
+    "hyperparameters": {
+        "C": 0.01,
+        "class_weight": "balanced"
+    },
+    "selected_threshold": 0.5,
+    "target_column": "Churn",
+    "positive_class": 1,
+    "feature_names": [
+        "Age",
+        "Tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "Gender_Female",
+        "Gender_Male",
+        "Gender_Other",
+        "Contract_Month-to-month",
+        "Contract_One year",
+        "Contract_Two year",
+        "PaymentMethod_Bank transfer",
+        "PaymentMethod_Credit card",
+        "PaymentMethod_Electronic check",
+        "PaymentMethod_Mailed check"
+    ],
+    "selection_metrics": {
+        "validation_f1": 0.6048189666280118,
+        "validation_recall": 0.7079939668174963,
+        "validation_roc_auc": 0.7748580995023866
+    },
+    "libraries": {
+        "scikit-learn": "1.9.1",
+        "pandas": "3.0.6",
+        "joblib": "1.6.0"
+    }
+}
