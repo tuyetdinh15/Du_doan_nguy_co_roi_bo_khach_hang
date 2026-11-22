@@ -1,0 +1,99 @@
+{
+    "algorithm": "Random Forest",
+    "hyperparameters": {
+        "n_estimators": 300,
+        "min_samples_split": 50,
+        "min_samples_leaf": 5,
+        "max_features": "sqrt",
+        "max_depth": 8
+    },
+    "fixed_parameters": {
+        "class_weight": "balanced",
+        "random_state": 42
+    },
+    "selected_threshold": 0.5,
+    "target_column": "Churn",
+    "positive_class": 1,
+    "feature_names": [
+        "Age",
+        "Tenure",
+        "MonthlyCharges",
+        "TotalCharges",
+        "Gender_Female",
+        "Gender_Male",
+        "Gender_Other",
+        "Contract_Month-to-month",
+        "Contract_One year",
+        "Contract_Two year",
+        "PaymentMethod_Bank transfer",
+        "PaymentMethod_Credit card",
+        "PaymentMethod_Electronic check",
+        "PaymentMethod_Mailed check"
+    ],
+    "selection_metrics": {
+        "validation_f1": 0.6331042724828204,
+        "validation_recall": 0.6392156862745098,
+        "validation_roc_auc": 0.8091460474644953
+    },
+    "validation_metrics": {
+        "accuracy": 0.7544,
+        "precision": 0.6271086120153891,
+        "recall": 0.6392156862745098,
+        "f1": 0.6331042724828204,
+        "roc_auc": 0.8091460474644953
+    },
+    "hyperparameter_search": {
+        "search_method": "RandomizedSearchCV",
+        "scoring": "f1 (lop Churn=1)",
+        "cv": "StratifiedKFold(n_splits=3, shuffle=True)",
+        "cv_folds": 3,
+        "random_state": 42,
+        "n_iter": 10,
+        "n_candidates_evaluated": 10,
+        "search_space": {
+            "n_estimators": [
+                100,
+                200,
+                300
+            ],
+            "max_depth": [
+                4,
+                6,
+                8,
+                10,
+                12
+            ],
+            "min_samples_split": [
+                10,
+                20,
+                50
+            ],
+            "min_samples_leaf": [
+                5,
+                10,
+                20
+            ],
+            "max_features": [
+                "sqrt",
+                0.5
+            ]
+        },
+        "best_cv_f1": 0.6214480455771153,
+        "best_cv_f1_std": 0.0017985385469771885,
+        "search_seconds": 215.6,
+        "fixed_parameters": {
+            "class_weight": "balanced",
+            "random_state": 42
+        }
+    },
+    "train_class_distribution": {
+        "churn_0": 53485,
+        "churn_1": 26515
+    },
+    "libraries": {
+        "scikit-learn": "1.9.1",
+        "pandas": "3.1.1",
+        "numpy": "2.5.5",
+        "joblib": "1.6.0"
+    }
+}
